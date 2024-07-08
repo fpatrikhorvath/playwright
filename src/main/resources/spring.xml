@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns="http://www.springframework.org/schema/beans"
@@ -18,7 +19,6 @@
             </list>
         </property>
     </bean>
-
 
     <bean id="parabankConfig" class="com.playwright.framework.config.ParabankConfig" autowire-candidate="true">
         <constructor-arg value="${parasoft.user.protocol}" type="java.lang.String"/>
