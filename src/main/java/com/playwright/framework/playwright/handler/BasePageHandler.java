@@ -1,13 +1,16 @@
 package com.playwright.framework.playwright.handler;
 
+import com.playwright.framework.config.ParabankConfig;
 import io.cucumber.spring.ScenarioScope;
 import org.springframework.stereotype.Service;
 
 @ScenarioScope
 @Service
 public abstract class BasePageHandler {
+    protected final ParabankConfig parabankConfig;
 
-    public abstract boolean isAt();
+    protected BasePageHandler(final ParabankConfig parabankConfig) {
+        this.parabankConfig = parabankConfig;
+    }
 
-    public abstract void goTo();
 }

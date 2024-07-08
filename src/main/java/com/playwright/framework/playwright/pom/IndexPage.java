@@ -1,5 +1,6 @@
 package com.playwright.framework.playwright.pom;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import io.cucumber.spring.ScenarioScope;
 import org.springframework.stereotype.Component;
@@ -15,5 +16,30 @@ public class IndexPage extends BasePage {
 
     protected IndexPage(final Page page) {
         super(page);
+    }
+
+    @Override
+    public boolean isAt() {
+        return getLoginButton().isVisible();
+    }
+
+    public Locator getUsernameInput() {
+        return page.locator(USERNAME_INPUT_XPATH);
+    }
+
+    public Locator getPasswordInput() {
+        return page.locator(PASSWORD_INPUT_XPATH);
+    }
+
+    public Locator getLoginButton() {
+        return page.locator(LOGIN_BUTTON_XPATH);
+    }
+
+    public Locator getForgotPassword() {
+        return page.locator(FORGOT_PASSWORD_BUTTON_XPATH);
+    }
+
+    public Locator getRegisterButton() {
+        return page.locator(REGISTER_BUTTON_XPATH);
     }
 }
