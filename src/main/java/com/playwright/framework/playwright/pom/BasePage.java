@@ -1,18 +1,16 @@
 package com.playwright.framework.playwright.pom;
 
 import com.microsoft.playwright.Page;
+import com.playwright.framework.playwright.PwFactory;
 import io.cucumber.spring.ScenarioScope;
 
 @ScenarioScope
 public abstract class BasePage {
-    private String PAGE_NAME;
     protected final Page page;
+    private String PAGE_NAME;
 
-    protected BasePage(final Page page) {
-        this.page = page;
+    protected BasePage(final PwFactory pwFactory) {
+        this.page = pwFactory.getPage();
     }
-    public abstract boolean isAt();
-    public void goTo(final String url){
-        page.navigate(url.replace("{pageName}", PAGE_NAME));
-    }
+
 }

@@ -1,7 +1,7 @@
 package com.playwright.framework.playwright.pom;
 
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
+import com.playwright.framework.playwright.PwFactory;
 import io.cucumber.spring.ScenarioScope;
 import org.springframework.stereotype.Component;
 
@@ -14,14 +14,11 @@ public class IndexPage extends BasePage {
     private final String FORGOT_PASSWORD_BUTTON_XPATH = "//a[@href='lookup.htm']";
     private final String REGISTER_BUTTON_XPATH = "//a[@href='register.htm']";
 
-    protected IndexPage(final Page page) {
-        super(page);
+    protected IndexPage(final PwFactory pwFactory) {
+        super(pwFactory);
     }
 
-    @Override
-    public boolean isAt() {
-        return getLoginButton().isVisible();
-    }
+
 
     public Locator getUsernameInput() {
         return page.locator(USERNAME_INPUT_XPATH);

@@ -1,6 +1,7 @@
 package com.playwright.framework.playwright.handler;
 
 import com.playwright.framework.config.ParabankConfig;
+import com.playwright.framework.playwright.PwFactory;
 import com.playwright.framework.playwright.model.ContextUser;
 import com.playwright.framework.playwright.pom.RegisterPage;
 import com.playwright.framework.service.util.FakerService;
@@ -21,12 +22,17 @@ public class RegisterPageHandler extends BasePageHandler {
 
     protected RegisterPageHandler(final ParabankConfig parabankConfig,
                                   final RegisterPage registerPage,
-                                  final FakerService fakerService) {
-        super(parabankConfig);
+                                  final FakerService fakerService,
+                                  final PwFactory pwFactory) {
+        super(parabankConfig, pwFactory);
         this.registerPage = registerPage;
         this.fakerService = fakerService;
     }
 
+    @Override
+    public boolean isAt() {
+        return registerPage.getRegisterButton().isVisible();
+    }
 
     public ContextUser initContextUser() {
         ContextUser user = new ContextUser();
@@ -84,9 +90,7 @@ public class RegisterPageHandler extends BasePageHandler {
     }
 
     public void open() {
-        registerPage.goTo(PAGE_NAME);
+        pwFactory.goTo(PAGE_NAME);
     }
 
-    public void isAt() {
-    }
 }

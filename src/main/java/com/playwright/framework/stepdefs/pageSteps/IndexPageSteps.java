@@ -5,7 +5,11 @@ import com.playwright.framework.playwright.model.ContextUser;
 import com.playwright.framework.stepdefs.TestCore;
 import com.playwright.framework.stores.ParabankPageStore;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class IndexPageSteps extends TestCore {
 
@@ -27,8 +31,8 @@ public class IndexPageSteps extends TestCore {
         scenarioContext.storeContextObject(identifier, user);
     }
 
-//    @Then("verify that the user is not logged in")
-//    public void verifyThatTheUserIsNotLoggedIm() {
-//        assertThat(getIndexPageHandler().isAt()).isTrue();
-//    }
+    @Then("verify that the user is not logged in")
+    public void verifyThatTheUserIsNotLoggedIm() {
+        assertThat(getIndexPageHandler().isAt()).isTrue();
+    }
 }

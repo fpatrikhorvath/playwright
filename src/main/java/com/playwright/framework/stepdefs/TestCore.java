@@ -1,6 +1,5 @@
 package com.playwright.framework.stepdefs;
 
-
 import com.playwright.framework.context.ScenarioContext;
 import com.playwright.framework.playwright.handler.IndexPageHandler;
 import com.playwright.framework.playwright.handler.RegisterPageHandler;
@@ -28,6 +27,7 @@ public class TestCore {
     protected IndexPageHandler getIndexPageHandler() {
         return parabankPageStore.getIndexPageHandler();
     }
+
     protected RegisterPageHandler getRegisterPageHandler() {
         return parabankPageStore.getRegisterPageHandler();
     }

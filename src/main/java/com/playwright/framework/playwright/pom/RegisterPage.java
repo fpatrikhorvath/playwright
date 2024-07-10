@@ -1,7 +1,7 @@
 package com.playwright.framework.playwright.pom;
 
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
+import com.playwright.framework.playwright.PwFactory;
 import io.cucumber.spring.ScenarioScope;
 import org.springframework.stereotype.Component;
 
@@ -24,14 +24,10 @@ public class RegisterPage extends BasePage {
     private final String LOGOUT_BUTTON_XPATH = "//a[@href='logout.htm']";
     private final String WELCOME_TITLE_XPATH = "//div[@id='rightPanel']/h1";
 
-    protected RegisterPage(final Page page) {
-        super(page);
+    protected RegisterPage(final PwFactory pwFactory) {
+        super(pwFactory);
     }
 
-    @Override
-    public boolean isAt() {
-        return getRegisterButton().isVisible();
-    }
 
     public Locator getFirstNameInputField() {
         return page.locator(FIRST_NAME_INPUT_ID);
