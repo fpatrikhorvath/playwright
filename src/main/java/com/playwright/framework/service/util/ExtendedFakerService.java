@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @ScenarioScope
-public class FakerService extends Faker {
+public class ExtendedFakerService extends Faker {
 
     public String generateSsn() {
         String areaNumber = String.format("%03d", number().numberBetween(1, 900));
