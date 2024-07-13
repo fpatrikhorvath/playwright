@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 @ScenarioScope
 public class PwFactory implements DisposableBean {
+    private static Browser browser;
     private final ParabankConfig parabankConfig;
     private final PlaywrightConfig playwrightConfig;
-    private static Browser browser;
     private Playwright playwright = null;
     private Page page = null;
 

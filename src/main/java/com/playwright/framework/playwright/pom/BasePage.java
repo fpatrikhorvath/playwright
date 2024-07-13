@@ -7,7 +7,6 @@ import io.cucumber.spring.ScenarioScope;
 @ScenarioScope
 public abstract class BasePage {
     protected final Page page;
-    private String PAGE_NAME;
 
     protected BasePage(final PwFactory pwFactory) {
         this.page = pwFactory.getPage();

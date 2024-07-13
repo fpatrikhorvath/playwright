@@ -19,7 +19,6 @@ public class IndexPage extends BasePage {
     }
 
 
-
     public Locator getUsernameInput() {
         return page.locator(USERNAME_INPUT_XPATH);
     }

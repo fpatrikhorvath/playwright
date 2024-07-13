@@ -16,5 +16,6 @@ public abstract class BasePageHandler {
         this.parabankConfig = parabankConfig;
         this.pwFactory = pwFactory;
     }
+
     public abstract boolean isAt();
 }
