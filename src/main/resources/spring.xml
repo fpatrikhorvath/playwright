@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns="http://www.springframework.org/schema/beans"
@@ -8,7 +9,7 @@
                  http://www.springframework.org/schema/context
                  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="com.regression.framework"/>
+    <context:component-scan base-package="com.playwright.framework"/>
 
     <bean id="propertyConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="locations">
@@ -19,14 +20,13 @@
         </property>
     </bean>
 
-
-    <bean id="parabankConfig" class="com.regression.framework.config.ParabankConfig" autowire-candidate="true">
+    <bean id="parabankConfig" class="com.playwright.framework.config.ParabankConfig" autowire-candidate="true">
         <constructor-arg value="${parasoft.user.protocol}" type="java.lang.String"/>
         <constructor-arg value="${parasoft.user.ip}" type="java.lang.String"/>
         <constructor-arg value="${parasoft.user.path}" type="java.lang.String"/>
     </bean>
 
-    <bean id="playwrightConfig" class="com.regression.framework.config.PlaywrightConfig" autowire-candidate="true">
+    <bean id="playwrightConfig" class="com.playwright.framework.config.PlaywrightConfig" autowire-candidate="true">
         <constructor-arg value="${playwright.driver.browserType}" type="java.lang.String"/>
         <constructor-arg value="${playwright.driver.isHeadless}" type="boolean"/>
         <constructor-arg value="${playwright.driver.timeout}" type="long"/>
