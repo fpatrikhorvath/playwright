@@ -21,7 +21,9 @@ public class PwFactory implements DisposableBean {
         this.parabankConfig = parabankConfig;
         this.playwrightConfig = playwrightConfig;
 
-        if (browser == null) {
+        if (!PwInitializationListener.isInitialized()) {
+            PwInitializationListener.setIsInitialized(true);
+
             playwright = Playwright.create();
 
             BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
@@ -51,13 +53,10 @@ public class PwFactory implements DisposableBean {
 
     @Override
     public void destroy() {
-
-        if (browser != null) {
+        if (PwInitializationListener.isInitialized()) {
             browser.close();
-        }
-
-        if (playwright != null) {
             playwright.close();
+            PwInitializationListener.setIsInitialized(false);
         }
     }
 
