@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public abstract class BasePageHandler {
     protected final ParabankConfig parabankConfig;
-    protected final PwFactory pwFactory;
+    protected final PwFactory      pwFactory;
 
     protected BasePageHandler(final ParabankConfig parabankConfig,
                               final PwFactory pwFactory) {
         this.parabankConfig = parabankConfig;
-        this.pwFactory = pwFactory;
+        this.pwFactory      = pwFactory;
     }
 
     public abstract boolean isAt();

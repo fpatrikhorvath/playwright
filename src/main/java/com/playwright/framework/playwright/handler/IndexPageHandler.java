@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 @ScenarioScope
 @Service
 public class IndexPageHandler extends BasePageHandler {
-    private final String PAGE_NAME = "index";
+    private static final String PAGE_NAME = "index";
+
     private final IndexPage indexPage;
 
     protected IndexPageHandler(final ParabankConfig parabankConfig,

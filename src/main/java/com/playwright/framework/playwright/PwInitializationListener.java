@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Component
 public class PwInitializationListener {
     private static final Logger logger = LogManager.getLogger(PwInitializationListener.class);
+
     private static AtomicBoolean isInitialized = new AtomicBoolean(false);
 
     public static boolean isInitialized() {

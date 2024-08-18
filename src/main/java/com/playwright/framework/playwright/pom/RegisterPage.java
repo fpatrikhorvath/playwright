@@ -8,21 +8,21 @@ import org.springframework.stereotype.Component;
 @ScenarioScope
 @Component
 public class RegisterPage extends BasePage {
-    private final String FIRST_NAME_INPUT_ID = "#customer\\.firstName";
-    private final String LAST_NAME_INPUT_ID = "#customer\\.lastName";
-    private final String STREET_INPUT_ID = "#customer\\.address\\.street";
-    private final String CITY_INPUT_ID = "#customer\\.address\\.city";
-    private final String STATE_INPUT_ID = "#customer\\.address\\.state";
-    private final String ZIP_CODE_INPUT_ID = "#customer\\.address\\.zipCode";
-    private final String PHONE_INPUT_ID = "#customer\\.phoneNumber";
-    private final String SSN_INPUT_ID = "#customer\\.ssn";
-    private final String USERNAME_INPUT_ID = "#customer\\.username";
-    private final String PASSWORD_INPUT_ID = "#customer\\.password";
+    private final String FIRST_NAME_INPUT_ID     = "#customer\\.firstName";
+    private final String LAST_NAME_INPUT_ID      = "#customer\\.lastName";
+    private final String STREET_INPUT_ID         = "#customer\\.address\\.street";
+    private final String CITY_INPUT_ID           = "#customer\\.address\\.city";
+    private final String STATE_INPUT_ID          = "#customer\\.address\\.state";
+    private final String ZIP_CODE_INPUT_ID       = "#customer\\.address\\.zipCode";
+    private final String PHONE_INPUT_ID          = "#customer\\.phoneNumber";
+    private final String SSN_INPUT_ID            = "#customer\\.ssn";
+    private final String USERNAME_INPUT_ID       = "#customer\\.username";
+    private final String PASSWORD_INPUT_ID       = "#customer\\.password";
     private final String PASSWORD_AGAIN_INPUT_ID = "#repeatedPassword";
 
     private final String REGISTER_BUTTON_XPATH = "//input[@value='Register']";
-    private final String LOGOUT_BUTTON_XPATH = "//a[@href='logout.htm']";
-    private final String WELCOME_TITLE_XPATH = "//div[@id='rightPanel']/h1";
+    private final String LOGOUT_BUTTON_XPATH   = "//a[@href='logout.htm']";
+    private final String WELCOME_TITLE_XPATH   = "//div[@id='rightPanel']/h1";
 
     protected RegisterPage(final PwFactory pwFactory) {
         super(pwFactory);

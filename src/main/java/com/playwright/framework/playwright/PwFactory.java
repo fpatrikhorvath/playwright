@@ -11,14 +11,16 @@ import org.springframework.stereotype.Component;
 @ScenarioScope
 public class PwFactory implements DisposableBean {
     private static Browser browser;
-    private final ParabankConfig parabankConfig;
+
+    private final ParabankConfig   parabankConfig;
     private final PlaywrightConfig playwrightConfig;
+
     private Playwright playwright = null;
-    private Page page = null;
+    private Page       page       = null;
 
     public PwFactory(final ParabankConfig parabankConfig,
                      final PlaywrightConfig playwrightConfig) {
-        this.parabankConfig = parabankConfig;
+        this.parabankConfig   = parabankConfig;
         this.playwrightConfig = playwrightConfig;
 
         if (!PwInitializationListener.isInitialized()) {

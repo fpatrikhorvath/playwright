@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 @ScenarioScope
 @Component
 public class IndexPage extends BasePage {
-    private final String USERNAME_INPUT_XPATH = "//input[@name='username']";
-    private final String PASSWORD_INPUT_XPATH = "//input[@name='password']";
-    private final String LOGIN_BUTTON_XPATH = "//input[@type='submit']";
-    private final String FORGOT_PASSWORD_BUTTON_XPATH = "//a[@href='lookup.htm']";
-    private final String REGISTER_BUTTON_XPATH = "//a[@href='register.htm']";
+    private static final String USERNAME_INPUT_XPATH         = "//input[@name='username']";
+    private static final String PASSWORD_INPUT_XPATH         = "//input[@name='password']";
+    private static final String LOGIN_BUTTON_XPATH           = "//input[@type='submit']";
+    private static final String FORGOT_PASSWORD_BUTTON_XPATH = "//a[@href='lookup.htm']";
+    private static final String REGISTER_BUTTON_XPATH        = "//a[@href='register.htm']";
 
     protected IndexPage(final PwFactory pwFactory) {
         super(pwFactory);
