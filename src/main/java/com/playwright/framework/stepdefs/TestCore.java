@@ -16,11 +16,12 @@ import org.springframework.test.context.ContextConfiguration;
 public class TestCore {
 
     protected final ScenarioContext scenarioContext;
+
     private final ParabankPageStore parabankPageStore;
 
     public TestCore(final ScenarioContext scenarioContext,
                     final ParabankPageStore parabankPageStore) {
-        this.scenarioContext = scenarioContext;
+        this.scenarioContext   = scenarioContext;
         this.parabankPageStore = parabankPageStore;
     }
 
